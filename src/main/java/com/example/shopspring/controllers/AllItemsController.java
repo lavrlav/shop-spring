@@ -1,6 +1,6 @@
 package com.example.shopspring.controllers;
 
-import com.example.shopspring.helpers.TimeHelper;
+import com.example.shopspring.utils.TimeFormatUtil;
 import com.example.shopspring.models.ItemModel;
 import com.example.shopspring.repository.ItemRepository;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class AllItemsController {
     @GetMapping
     public String getAllItemsPage(Model model) {
         List<ItemModel> list = itemRepository.findAll();
-        list = TimeHelper.getTime(list);
+        list = TimeFormatUtil.getTime(list);
         model.addAttribute("items", list);
 
         return "allItems";

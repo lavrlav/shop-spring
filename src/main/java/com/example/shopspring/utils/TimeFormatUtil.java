@@ -1,4 +1,4 @@
-package com.example.shopspring.helpers;
+package com.example.shopspring.utils;
 
 import com.example.shopspring.models.ItemModel;
 
@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class TimeHelper {
+public class TimeFormatUtil {
     public static List<ItemModel> getTime(List<ItemModel> list){
         for(ItemModel i: list){
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm dd.MM");

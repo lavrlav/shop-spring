@@ -1,4 +1,4 @@
-package com.example.shopspring.helpers;
+package com.example.shopspring.utils;
 
 import com.example.shopspring.models.ItemModel;
 import lombok.Data;

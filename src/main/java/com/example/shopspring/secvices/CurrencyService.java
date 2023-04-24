@@ -15,8 +15,8 @@ public class CurrencyService {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
             String course = bufferedReader.readLine();
             JSONObject jsonObject = new JSONObject(course);
-            double eur = Double.parseDouble(jsonObject.getString("Cur_OfficialRate"));
-            return Math.round(bynPrice / eur);
+            double eur = Double.parseDouble(jsonObject.get("Cur_OfficialRate").toString());
+            return (bynPrice / eur)-(bynPrice / eur)%0.01;
 
         } catch (Exception e) {
             return -10;
@@ -30,8 +30,8 @@ public class CurrencyService {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
             String course = bufferedReader.readLine();
             JSONObject jsonObject = new JSONObject(course);
-            double usd = Double.parseDouble(jsonObject.getString("Cur_OfficialRate"));
-            return Math.round(bynPrice / usd);
+            double usd = Double.parseDouble(jsonObject.get("Cur_OfficialRate").toString());
+            return (bynPrice / usd)-(bynPrice / usd)%0.01;
 
         } catch (Exception e) {
             return -10;
